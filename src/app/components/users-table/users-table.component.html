@@ -1,0 +1,29 @@
+<table class="table text-center">
+    <thead>
+        <tr >
+            <th scope="col">first Name</th>
+            <th scope="col">last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">images</th>
+            <th scope="col">Action</th>
+    
+        </tr>
+    </thead>
+    <tbody id="">
+        
+        <tr *ngFor="let item of T">
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.email}}</td>
+           
+            <td><img [src]="item.avatar" style="width:100px; height: 100px;"></td>
+            
+            <td>
+                <button class="btn btn-success" (click)="gotoDisplay(item._id)">Display</button>
+                    <button class="btn btn-warning" (click)="gotoEdit(item._id)">Edit</button>
+                    <button  class="btn btn-danger" (click)="deleteUser(item._id)">Delete</button>
+            </td>  
+        </tr>
+        
+    </tbody>
+</table>

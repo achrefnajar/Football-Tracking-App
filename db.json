@@ -1,0 +1,148 @@
+{
+  "matches": [
+    {
+      "id": 1,
+      "teamone": "ca",
+      "teamtwo": "est",
+      "scoreone": 5,
+      "scoretwo": "5"
+    },
+    {
+      "id": 2,
+      "teamone": "fcb",
+      "teamtwo": "rmd",
+      "scoreone": 4,
+      "scoretwo": 2
+    },
+    {
+      "id": 3,
+      "teamone": "juv",
+      "teamtwo": "milan",
+      "scoreone": 5,
+      "scoretwo": 3
+    },
+    {
+      "id": 4,
+      "teamone": "bayern",
+      "teamtwo": "dortmund",
+      "scoreone": 8,
+      "scoretwo": 2
+    },
+    {
+      "id": 5,
+      "teamone": "man united",
+      "teamtwo": "man city",
+      "scoreone": 4,
+      "scoretwo": 2
+    },
+    {
+      "id": 7,
+      "teamone": "beja",
+      "teamtwo": "makther",
+      "scoreone": 4,
+      "scoretwo": 4
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "Name": "man united",
+      "owner": "glazers",
+      "country": "england",
+      "stadium": "old trafford"
+    },
+    {
+      "id": 2,
+      "Name": "man city",
+      "owner": "ben zayed12",
+      "country": "england",
+      "stadium": "ettihad"
+    },
+    {
+      "id": 3,
+      "Name": "psg",
+      "owner": "nasr",
+      "country": "france",
+      "stadium": "parc de prince"
+    },
+    {
+      "id": 4,
+      "Name": "chelsea",
+      "owner": "boly",
+      "country": "england",
+      "stadium": "sramford"
+    },
+    {
+      "Name": "arsenal",
+      "country": "england",
+      "owner": "americain",
+      "stadium": "emarites",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "ali",
+      "lastName": "ben slah",
+      "email": "med@med.com",
+      "pwd": "med"
+    },
+    {
+      "id": 2,
+      "firstName": "ahmed",
+      "lastName": "ben ahmed",
+      "email": "ahmed@1.com",
+      "pwd": "1234"
+    },
+    {
+      "id": 3,
+      "firstName": "slim",
+      "lastName": "njimi ",
+      "email": "slim@1.com",
+      "pwd": "1234"
+    },
+    {
+      "firstName": "achref",
+      "lastName": "najar",
+      "email": "achrefnajar1@gmail.com",
+      "pwd": "123456",
+      "confirmPwd": "123456",
+      "id": 4
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "name": "achref",
+      "number": "najar",
+      "position": "milieu",
+      "team": "Man United",
+      "age": "28"
+    },
+    {
+      "id": 3,
+      "name": "slim",
+      "number": "ben slag",
+      "position": "defence",
+      "team": "real madrid",
+      "age": "35"
+    },
+    {
+      "name": "messi",
+      "number": "10",
+      "position": "aig",
+      "team": "psg",
+      "age": "35",
+      "id": 4
+    },
+    {
+      "name": "ronaldo",
+      "number": "7",
+      "position": "aid",
+      "team": "man united",
+      "age": "38",
+      "id": 5
+    }
+  ]
+}

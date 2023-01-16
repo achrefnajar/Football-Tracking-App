@@ -1,0 +1,89 @@
+<app-banner title="test"></app-banner>
+  
+    <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <form [formGroup]="testForm">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="firstName" placeholder="FirstName">
+                </div>
+                <div *ngIf="testForm.controls['firstName'].invalid && 
+                (testForm.controls['firstName'].touched || testForm.controls['firstName'].dirty) ">
+
+                <div *ngIf="testForm.controls['firstName'].errors.required">
+                  First Name is required
+                </div>
+                <div *ngIf="testForm.controls['firstName'].errors.minlength">
+                  First Name must have at least 3 chars
+
+                </div>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+                </div>
+                <div *ngIf="testForm.controls['lastName'].invalid && 
+                (testForm.controls['lastName'].touched || testForm.controls['lastName'].dirty) ">
+
+                <div *ngIf="testForm.controls['lastName'].errors.required" style="color: red;">
+                  Last Name is required
+                </div>
+                <div *ngIf="testForm.controls['lastName'].errors.minlength">
+                  last Name must have at least 4 chars
+
+                </div>
+                </div>
+
+
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                </div>
+                <div *ngIf="testForm.controls['email'].invalid && 
+                (testForm.controls['email'].touched || testForm.controls['email'].dirty) ">
+
+                <div *ngIf="testForm.controls['email'].errors.required" style="color: red;">
+                  Email is required
+                </div>
+                <div *ngIf="testForm.controls['email'].errors.email">
+                  Email invalid
+                </div>
+                </div>
+                <span style="color: red;">{{msgError}}</span>
+                
+                <div class="form-group">
+                  <input type="submit"  class="btn btn-primary py-3 px-5" (click)="test()" value="Test">
+                </div>
+              </form> 
+             
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive text-center">
+
+       
+        <table class="table">
+            <thead>
+                <tr>
+    
+                    <th scope="col">first Name</th>
+                    <th scope="col">last Name</th>
+                    <th scope="col">Email</th>
+                    
+    
+    
+                </tr>
+            </thead>
+            <tbody id="">
+                <tr *ngFor="let elt of T ">
+                    
+                    <td >{{elt.firstName}}</td>
+                    <td >{{elt.lastName}}</td>
+                    <td >{{elt.email}}</td>
+    
+                </tr>
+            </tbody>
+        </table>
+    </div>

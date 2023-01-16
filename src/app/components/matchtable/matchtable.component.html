@@ -1,0 +1,43 @@
+<form>
+    <input type="text" class="form-control" [(ngModel)]="term" name="value" placeholder="Search"
+        style="margin: 20px; width: 80%;">
+</form>
+<div class="table-responsive text-center">
+
+    {{term}}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+
+                <th scope="col">Team one</th>
+                <th scope="col">Team two</th>
+                <th scope="col">Socre one</th>
+                <th scope="col">score two</th>
+                <th scope="col">Action</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="">
+            <tr *ngFor="let elt of pageOfItems | myFilter:term">
+                <td>{{elt._id}}</td>
+                <td [ngStyle]="{'color': color(elt.scoreone,elt.scoretwo)}">{{elt.teamone}}</td>
+                <td [ngStyle]="{'color': color(elt.scoretwo,elt.scoreone)}">{{elt.teamtwo}}</td>
+                <td [ngStyle]="{'color': color(elt.scoreone,elt.scoretwo)}">{{elt.scoreone}}</td>
+                <td [ngStyle]="{'color': color(elt.scoretwo,elt.scoreone)}">{{elt.scoretwo}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="goToDisplay(elt._id)">Display</button>
+                    <button class="btn btn-warning" (click)="goToEdit(elt._id)">Edit</button>
+                    <button class="btn btn-danger"  (click)="deleteMatch(elt._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        
+       
+    </table>
+    <div  class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="T" [pageSize]="2" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">capacity</th>
+            <th scope="col">country</th>
+            
+            <th scope="col">action</th>
+    
+        </tr>
+    </thead>
+    <tbody id="">
+        
+        <tr *ngFor="let item of T">
+            <td>{{item.name}}</td>
+            <td>{{item.capacity}}</td>
+            <td>{{item.country}}</td>
+            
+            
+            
+            <td>
+                <button  class="btn btn-success p-2" (click)="goTodisplay(item._id)">Display</button>
+                <button class="btn btn-warning" (click)="goToEdit(item._id)">Edit</button>
+                <button class="btn btn-danger"  (click)="deleteStadium(item._id)">Delete</button>
+            </td>
+             
+                
+        </tr>
+            
+        
+    </tbody>
+</table>

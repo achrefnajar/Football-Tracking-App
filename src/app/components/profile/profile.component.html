@@ -1,0 +1,16 @@
+<app-banner title="Profile"></app-banner>
+<div class="container" style="margin-top: 200px;">
+<ul class="children">
+    <li class="comment">
+      <div class="vcard bio">
+        <img [src]="user.avatar" alt="Image placeholder">
+      </div>
+      <div class="comment-body">
+        <h3 style="color: blue;">{{user.firstName}}</h3>
+        <h3 style="color: blue;">{{user.lastName}}</h3>
+        <div class="meta" style="color: red;"><h3>{{user.email}}</h3></div>
+        
+        <p><a href="#" class="reply">Reply</a></p>
+      </div>
+    </li>
+  </ul>

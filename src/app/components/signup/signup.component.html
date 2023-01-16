@@ -1,0 +1,100 @@
+
+   <app-banner title="signup"></app-banner>
+  
+    <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <form [formGroup]="signupForm">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="firstName" placeholder="FirstName">
+                </div>
+                <div *ngIf="signupForm.controls['firstName'].invalid && 
+                (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty) ">
+
+                <div *ngIf="signupForm.controls['firstName'].errors.required">
+                  First Name is required
+                </div>
+                <div *ngIf="signupForm.controls['firstName'].errors.minlength">
+                  First Name must have at least 3 chars
+
+                </div>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+                </div>
+                <div *ngIf="signupForm.controls['lastName'].invalid && 
+                (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty) ">
+
+                <div *ngIf="signupForm.controls['lastName'].errors.required" style="color: red;">
+                  Last Name is required
+                </div>
+                <div *ngIf="signupForm.controls['lastName'].errors.minlength">
+                  last Name must have at least 4 chars
+
+                </div>
+                </div>
+
+
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                </div>
+                <div *ngIf="signupForm.controls['email'].invalid && 
+                (signupForm.controls['email'].touched || signupForm.controls['email'].dirty) ">
+
+                <div *ngIf="signupForm.controls['email'].errors.required" style="color: red;">
+                  Email is required
+                </div>
+                <div *ngIf="signupForm.controls['email'].errors.email">
+                  Email invalid
+                </div>
+                </div>
+                <span style="color: red;">{{msgError}}</span>
+
+
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="pwd" placeholder="Password">
+                </div>
+                <div *ngIf="signupForm.controls['pwd'].invalid && 
+                (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].dirty) ">
+
+                <div *ngIf="signupForm.controls['pwd'].errors.required">
+                  password Name is required
+                </div>
+                <div *ngIf="signupForm.controls['pwd'].errors.minlength">
+                  password  must have in 6 chars 
+                </div>
+                <div *ngIf="signupForm.controls['pwd'].errors.maxlength">
+                  password must have in 12 chars 
+                </div>
+                </div>
+
+
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="confirmPwd" placeholder="valid password">
+                </div>
+                
+                <div class="text-center">
+                  <button class="btn btn-danger" (click)="filePicker.click()">Select your avatar</button>
+                </div>  
+
+                <div class="form-group">
+                  <input type="file" class="form-control" #filePicker (change)='onImageSelected($event)' style="visibility: hidden;" >
+                </div>
+
+                <div class="text-center" style="margin-bottom: 20px;">
+                  <img [src]="imagePreview" *ngIf="imagePreview" alt="avatar">
+                </div>
+                
+                <div class="form-group">
+                  <input type="submit" [disabled]="signupForm.invalid" class="btn btn-primary py-3 px-5" (click)="signup()" value="Sing up">
+                </div>
+              </form> 
+              {{signupForm.value.email | json}} 
+              {{signupForm.valid | json}} 
+            </div>
+           
+          </div>
+        </div>
+      </div>
